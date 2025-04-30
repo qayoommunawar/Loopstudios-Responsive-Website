@@ -1,0 +1,514 @@
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+    box-sizing: border-box;
+  }
+  
+  /* 2. Remove default margin */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* 3. Enable keyword animations */
+  /* @media (prefers-reduced-motion: no-preference) {
+    html {
+      interpolate-size: allow-keywords;
+    }
+  } */
+  
+  body {
+    /* 4. Add accessible line-height */
+    line-height: 1.5;
+    /* 5. Improve text rendering */
+    -webkit-font-smoothing: antialiased;
+    font-family: "Altla", sans-serif;
+    font-size: 15px;
+  }
+  
+  /* 6. Improve media defaults */
+  img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+  }
+  
+  /* 7. Inherit fonts for form controls */
+  input, button, textarea, select {
+    font: inherit;
+  }
+  
+  /* 8. Avoid text overflows */
+  p, h1, h2, h3, h4, h5, h6 {
+    overflow-wrap: break-word;
+  }
+  
+  /* 9. Improve line wrapping */
+  /* p {
+    text-wrap: pretty;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    text-wrap: balance;
+  } */
+  
+  /*
+    10. Create a root stacking context
+  */
+  #root, #__next {
+    isolation: isolate;
+  }
+
+
+:root{
+    /*colors*/
+    --color-white: hsl(0, 0%, 100%);
+    --color-black: hsl(0, 0%, 0%);
+    --color-gray: hsl(0, 0%, 55%);
+    --color-gray-dark: hsl(0, 0%, 41%);
+    /* headings */
+    --heading-lg: 3rem;
+    --heading-md: 2.5rem;
+    --heading-sml: 1.75rem;
+  
+    /* gaps */
+    --gap-lg: 3rem;
+    --gap-md: 2rem;
+    --gap-sml: 1.5rem;
+    --gap-sml-x: 0.8rem;
+}
+
+.wrapper{
+    padding: 0 var(--gap-md);
+}
+
+
+a{
+    text-decoration: none;
+    color: var(--color-white);
+}
+
+.text-center{
+    text-align: center;
+}
+
+ul{
+    display: flex;
+    list-style: none;
+    gap: var(--gap-sml);
+}
+
+h1,h2,h3{
+    font-family: "Josefin Sans", sans-serif;
+    font-weight: 300;
+    line-height: 1;
+}
+
+p{
+    color: var(--color-gray-dark);
+    font-weight: 400;
+}
+
+.flex-column{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-sml);
+}
+
+main{
+    padding: var(--gap-lg) 0;
+}
+
+/* header */
+
+header{
+    background: url("/Images/mobile/image-hero.jpg") no-repeat center center/cover;
+    width: 100%;
+    height: 70vh;
+}
+
+header .wrapper{
+    color: var(--color-white);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+h1.header-heading{
+    font-size: var(--heading-md);
+    padding: var(--gap-sml);
+    margin-top: auto;
+    margin-bottom: auto;
+    border: 2px solid var(--color-white);
+}
+
+@media (min-width: 1024px){
+  h1.header-heading{
+    width: 50%;
+}
+}
+
+/* Intro */
+
+
+
+.intro .wrapper{
+    gap: var(--gap-md);
+    text-align: center;
+}
+
+
+
+
+.intro .intro-body h2{
+    margin-bottom: var(--gap-sml-x);
+    font-size: var(--heading-sml);
+
+}
+
+/* creations */
+
+.creation-heading{
+    padding-top: var(--gap-lg);
+    font-size: var(--heading-sml);
+}
+
+.creation-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100%,1fr));
+    padding: var(--gap-md) 0;
+}
+
+.creation-grid img{
+  min-width: 100%;
+}
+
+.deep-earth{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.deep-earth:before {
+    content: "DEAP EARTH";
+    width: 40%;
+    line-height: 1;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .fisheye{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.fisheye:before {
+    content: "MAKE IT FISHEYE";
+    position: absolute;
+    width: 40%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .curiosity{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.curiosity:before {
+    content: "THE CURIOSITY";
+    position: absolute;
+    width: 40%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .pocket{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.pocket:before {
+    content: "POCKET BOREALIS";
+    position: absolute;
+    width: 50%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .above{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.above:before {
+    content: "FROM UP ABOVE VR";
+    position: absolute;
+    width: 60%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .grid{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.grid:before {
+    content: "THE GRID";
+    position: absolute;
+    width: 40%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .arcade{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.arcade:before {
+    content: "NIGHT ARCADE";
+    position: absolute;
+    width: 40%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+  .team{
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.team:before {
+    content: "SOCCER TEAM VR";
+    position: absolute;
+    width: 60%;
+    line-height: 1;
+    bottom: 1rem;
+    left: 1rem;
+    color: black;  
+    color: whitesmoke;
+    font-family: "Josefin Sans", sans-serif;            
+    font-size: var(--heading-sml);
+    font-weight: 300;
+    z-index: 2;
+  }
+
+
+/*footer*/
+
+footer{
+  background-color: var(--color-black);
+  padding: 2rem 0;
+  
+}
+
+footer img.logo{
+  margin: 0 auto;
+}
+
+footer .wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  place-content: center;
+  gap: 1.5rem;
+}
+
+ul.footer-links{
+  flex-direction: column;
+  text-align: center;
+  /* padding: 1.5rem 0; */
+  gap: 1rem;
+}
+
+.social-icons{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.flex-footer{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  place-content: center;
+  gap: var(--gap-sml);
+}
+
+@media (min-width: 767px){
+  .flex-column{
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  
+  .wrapper{
+    width: 80%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  ul.footer-links{
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .creation-grid{
+    /* grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); */
+    grid-template-columns: repeat(4,1fr);
+    /* grid-template-rows: repeat(2,2fr); */
+    padding: 2rem 0;
+}
+
+.intro .wrapper .intro-body{
+  padding: 2rem; 
+  text-align: left;
+}
+
+h1.header-heading{
+ max-width: 70%;
+}
+
+.intro .wrapper{
+  gap: 0;
+}
+
+.intro .wrapper>*{
+  flex: 1 1 0;
+}
+
+}
+
+
+@media (min-width: 1024px){
+  .intro{
+    margin: var(--gap-lg) 0; 
+  }
+  
+  .intro .wrapper .intro-body{
+    padding: 2rem;
+    padding-right: 0;
+    /* width: 40%; */
+    align-self: flex-end;
+    /* margin-left: -1rem; */
+    transform: translateX(-4rem);
+    margin-bottom: -3rem;
+    /* transform: translateY(4rem); */
+    background-color: var(--color-white);
+  }
+  
+  .text-center{
+    text-align: start;
+  }
+  
+  footer .wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    place-content: center;
+    gap: 1.5rem;
+  }
+  
+  footer .wrapper .text-center{
+    text-align: end;
+  } 
+  
+    .social-icons{
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+    }
+  
+    footer img.logo{
+      margin: 0;
+    }
+    
+    .creation-heading{
+      font-size: var(--heading-md);
+  }
+  h1.header-heading{
+    font-size: var(--heading-lg);
+  }
+  
+    .intro .wrapper .intro-body h2.intro-heading{
+      font-size: var(--heading-md);
+    }  
+
+    ul.footer-links{
+      justify-content: start;
+    }
+  
+}
+
+
+
+
+
+
+
